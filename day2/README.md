@@ -18,6 +18,10 @@
 ***
 在引用 loader 的时候可以使用全名 json-loader，或者使用短名 json。这个命名规则和搜索优先级顺序在 webpack 的 resolveLoader.moduleTemplates api 中定义。
 ***
+1. Loader 可以在 require() 引用模块的时候添加
+2. 也可以在 webpack全局配置中进行绑定
+3. 还可以通过命令行的方式使用
+***
 将 entry.js 中的 require("!style!css!./style.css") 修改为 require("./style.css") ，然后执行：
 `	$ webpack entry.js bundle.js --module-bind 'css=style!css'
 	# 有些环境下可能需要使用双引号
